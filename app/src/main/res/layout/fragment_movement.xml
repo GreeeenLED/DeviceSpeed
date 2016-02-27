@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.atitude6430.speed.movementFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CAR"
+        android:id="@+id/carButton"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="moveByCar"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FOOT"
+        android:id="@+id/footButton"
+        android:layout_below="@+id/carButton"
+        android:layout_centerHorizontal="true"
+        android:onClick="moveOnFoot"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BIKE"
+        android:id="@+id/bikeButton"
+        android:layout_below="@+id/footButton"
+        android:layout_centerHorizontal="true"
+        android:onClick="moveByBike"/>
+</RelativeLayout>
