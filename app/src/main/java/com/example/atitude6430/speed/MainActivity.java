@@ -1,5 +1,6 @@
 package com.example.atitude6430.speed;
 
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -20,7 +21,7 @@ import android.widget.Toast;
 import java.util.Formatter;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements BaseGpsListener,unitsFragment.buttonClickListener, movementFragment.OnMovementListener,resultsFragment.OnResultsClosed {
+public class MainActivity extends AppCompatActivity implements BaseGpsListener,unitsFragment.buttonClickListener, movementFragment.OnMovementListener,resultsFragment.OnResultsClosed,CNewResultDialog.OnNewResultListener {
     TextView displaySpeed; //wyswietlanie aktualnej predkosci
     ///////////////////////////////TESTOWANIE SHARED PREF
     float highestSpeed; // zmienna do wyswietlania predkosci z metody getSpeed
@@ -82,6 +83,8 @@ public class MainActivity extends AppCompatActivity implements BaseGpsListener,u
                 pickFragment(res);
                 break;
             case R.id.menuSave:
+                DialogFragment newResultDialog = new CNewResultDialog();
+                newResultDialog.show(getFragmentManager(),"tag1");
                 //zrobic wpisywanie highest speed z nazwa uzytkowniaka
                 break;
         }
@@ -187,5 +190,11 @@ public class MainActivity extends AppCompatActivity implements BaseGpsListener,u
     @Override
     public void ExitResults(View view) {
         ShowHideFragment(false);
+    }
+
+    @Override
+    public void NewResultSave(String userName) {
+        SaveResult(userName,highestSpeed);
+        Log.d("dodam", " " + userName+" his speed: "+highestSpeed);
     }
 }
