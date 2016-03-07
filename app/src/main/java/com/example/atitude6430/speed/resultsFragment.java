@@ -42,7 +42,8 @@ public class resultsFragment extends Fragment {
     View view;
     ArrayList<String> displayList = new ArrayList<>();
     ArrayAdapter<String> adapter;
-    @Override
+
+        @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_results, container, false);
@@ -50,8 +51,10 @@ public class resultsFragment extends Fragment {
         String moveType = getArguments().getString("pref");
         preferences = getActivity().getSharedPreferences(moveType, Context.MODE_PRIVATE);
         ShowResults();
-        adapter = new ArrayAdapter<String>(getActivity(),R.layout.row_layout,displayList);
+
+            adapter = new ArrayAdapter<String>(getActivity(),R.layout.row_layout,displayList);
         resultListView.setAdapter(adapter);
+
         return view;
     }
 
@@ -90,6 +93,7 @@ public class resultsFragment extends Fragment {
     OnResultsClosed onResultsClosed;
     public interface OnResultsClosed{
         public void ExitResults(View view);
+        public void ClearResulst(View view);
     }
 
     @Override

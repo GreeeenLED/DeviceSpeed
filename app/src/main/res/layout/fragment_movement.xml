@@ -11,25 +11,36 @@
         android:layout_height="wrap_content"
         android:text="CAR"
         android:id="@+id/carButton"
+        android:background="@drawable/movement_buttons"
+        android:onClick="moveByCar"
+        android:textSize="30dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="20dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="moveByCar"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FOOT"
+        android:textSize="30dp"
         android:id="@+id/footButton"
-        android:layout_below="@+id/carButton"
-        android:layout_centerHorizontal="true"
-        android:onClick="moveOnFoot"/>
+        android:background="@drawable/movement_buttons"
+        android:onClick="moveOnFoot"
+        android:layout_alignTop="@+id/carButton"
+        android:layout_toRightOf="@+id/carButton"
+        android:layout_toEndOf="@+id/carButton"
+        android:layout_marginLeft="10dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BIKE"
+        android:textSize="30dp"
         android:id="@+id/bikeButton"
-        android:layout_below="@+id/footButton"
-        android:layout_centerHorizontal="true"
-        android:onClick="moveByBike"/>
+        android:background="@drawable/movement_buttons"
+        android:onClick="moveByBike"
+        android:layout_below="@+id/carButton"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
